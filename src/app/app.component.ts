@@ -7,9 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   ngOnInit(): void {
-
     setTimeout(() => {
-      this.peliculas=[
+      this.peliculasEnCines=[
         {
           titulo:"Spider-Man",
           fecha: new Date(),
@@ -24,13 +23,35 @@ export class AppComponent implements OnInit{
 
     }, 2000);
 
+    setTimeout(() => {
+      this.peliculasProximosEstrenos=[
+        {
+          titulo:"1985",
+          fecha: new Date(),
+          precio:1800.99
+        },
+        {
+          titulo:"Rocky",
+          fecha: new Date(),
+          precio:600.99
+        },
+        {
+          titulo:"Argentina",
+          fecha: new Date(),
+          precio:800.99
+        }
+      ]
+    }, 1500);
+
+
   }
   title = 'front-end';
+  ocultar= false;
+  peliculasEnCines;
+  peliculasProximosEstrenos;
 
-  peliculas;
-
-
-  duplica(valor: number): number{
-        return valor*2
+  manejarRated(voto : number):void
+  {
+    alert(voto);
   }
 }

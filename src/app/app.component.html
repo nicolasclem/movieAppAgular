@@ -1,42 +1,22 @@
-<h2>Hola Mundo</h2>
-<div>
-  {{ title }}
-</div>
-<div>la suma de 2 y 2 es {{ 2 + 2 }}</div>
-<div>el doble de 3 es {{ duplica(3) }}</div>
-
-<p>PELICULAS</p>
-<!-- <div>
-    {{pelicula.titulo | uppercase}}
-</div>
-<div>
-    {{pelicula.precio | currency }}
-</div>
-<div>
-    {{pelicula.fecha | date:"dd-MMMM-yyyy" | uppercase}}
-</div> -->
-
-<div *ngIf="!peliculas">
-  <img
-    src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif?20170503175831"
-  />
-</div>
-
-<div *ngIf="peliculas?.length === 0">
-    <p>No hay peliculas para mostrar</p>
-</div>
-
-<div *ngIf="peliculas && peliculas.length > 0">
-  <div
-    *ngFor="let pelicula of peliculas; let index = index"
-    class="pelicula-contenedor"
-  >
-    <div>Pelicula {{ index }}: {{ pelicula.titulo | uppercase }}</div>
-    <div>
-      {{ pelicula.precio | currency }}
-    </div>
-    <div>
-      {{ pelicula.fecha | date : "dd-MMMM-yyyy" | uppercase }}
-    </div>
+<app-menu></app-menu>
+<div class="contenedor">
+  <h2>Listado de Peliculas</h2>
+<!--
+  <input type="text" (input)="title=$event.target.value">
+  <app-ciclo-de-vida *ngIf="ocultar" [titulo]="title"></app-ciclo-de-vida>
+  <div>
+      <input type="checkbox" checked (change)="ocultar=!ocultar" /> Ocultar
   </div>
+
+<app-rating (rated)="manejarRated($event)"></app-rating>
+ -->
+
+
+  <app-listado-peliculas [peliculas]="peliculasEnCines"></app-listado-peliculas>
+
+  <h2>Proximas de Peliculas</h2>
+
+  <app-listado-peliculas
+    [peliculas]="peliculasProximosEstrenos"
+  ></app-listado-peliculas>
 </div>
