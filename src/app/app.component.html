@@ -1,22 +1,8 @@
 <app-menu></app-menu>
 <div class="contenedor">
-  <h2>Listado de Peliculas</h2>
-<!--
-  <input type="text" (input)="title=$event.target.value">
-  <app-ciclo-de-vida *ngIf="ocultar" [titulo]="title"></app-ciclo-de-vida>
-  <div>
-      <input type="checkbox" checked (change)="ocultar=!ocultar" /> Ocultar
-  </div>
 
-<app-rating (rated)="manejarRated($event)"></app-rating>
- -->
+<router-outlet></router-outlet>
 
-
-  <app-listado-peliculas [peliculas]="peliculasEnCines"></app-listado-peliculas>
-
-  <h2>Proximas de Peliculas</h2>
-
-  <app-listado-peliculas
-    [peliculas]="peliculasProximosEstrenos"
-  ></app-listado-peliculas>
 </div>
+
+
