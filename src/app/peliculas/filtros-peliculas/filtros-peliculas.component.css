@@ -1,0 +1,11 @@
+form{
+  width: 100%;
+}
+form mat-form-field{
+    width: 30%;
+    margin-right: 1rem;
+}
+.contenedorLimpiar{
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
