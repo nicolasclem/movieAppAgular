@@ -20,7 +20,11 @@ import { CrearActoresComponent } from './actores/crear-actores/crear-actores.com
 import { CrearPeliculaComponent } from './peliculas/crear-pelicula/crear-pelicula.component';
 import { CrearCineComponent } from './cines/crear-cine/crear-cine.component';
 import { IndiceCinesComponent } from './cines/indice-cines/indice-cines.component';
-import { IndicePeliculasComponent } from './peliculas/indice-peliculas/indice-peliculas.component'
+import { IndicePeliculasComponent } from './peliculas/indice-peliculas/indice-peliculas.component';
+import { EditarActoresComponent } from './actores/editar-actores/editar-actores.component';
+import { EditarGenerosComponent } from './generos/editar-generos/editar-generos.component';
+import { EditarCineComponent } from './cines/editar-cine/editar-cine.component';
+import { EditarPeliculaComponent } from './peliculas/editar-pelicula/editar-pelicula.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { IndicePeliculasComponent } from './peliculas/indice-peliculas/indice-pe
     CrearPeliculaComponent,
     CrearCineComponent,
     IndiceCinesComponent,
-    IndicePeliculasComponent
+    IndicePeliculasComponent,
+    EditarActoresComponent,
+    EditarGenerosComponent,
+    EditarCineComponent,
+    EditarPeliculaComponent
   ],
   imports: [
     BrowserModule,
