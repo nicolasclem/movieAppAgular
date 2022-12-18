@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-filtros-peliculas',
@@ -8,7 +10,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class FiltrosPeliculasComponent implements OnInit {
 
-  constructor(private FormBuilder: FormBuilder) { }
+  constructor(private FormBuilder: FormBuilder,
+                private location:Location,
+                private activatedRoute: ActivatedRoute) { }
 
   form: FormGroup;
 
@@ -38,11 +42,57 @@ export class FiltrosPeliculasComponent implements OnInit {
     this.form= this.FormBuilder.group(
       this.formularioOriginal
     );
+    this.leerValoresURL();
+    this.buscarPeliculas(this.form.value);
 
     this.form.valueChanges.subscribe( valores=>{
       this.peliculas= this.peliculasOriginal;
       this.buscarPeliculas(valores);
+      this.escribirParametrosEnUrl();
     })
+  }
+
+  private leerValoresURL(){
+    this.activatedRoute.queryParams.subscribe((params)=>{
+      var objeto: any={};
+      if(params.titulo){
+        objeto.titulo = params.titulo;
+      }
+      if(params.generoId){
+        objeto.generoId = Number(params.generoId);
+      }
+      if(params.proximosEstrenos){
+        objeto.proximosEstrenos = params.proximosEstrenos;
+      }
+      if(params.enCines){
+        objeto.enCines = params.enCines;
+      }
+
+      this.form.patchValue(objeto)
+    });
+  }
+
+  private escribirParametrosEnUrl(){
+    var queryString =[];
+    var valoresFormulario = this.form.value;
+
+    if(valoresFormulario.titulo){
+      queryString.push(`titulo=${valoresFormulario.titulo}`);
+    }
+
+    if(valoresFormulario.generoId != '0'){
+      queryString.push(`generoId=${valoresFormulario.generoId}`);
+    }
+
+    if(valoresFormulario.proximosEstrenos){
+      queryString.push(`proximosEstrenos=${valoresFormulario.proximosEstrenos}`);
+    }
+
+    if(valoresFormulario.enCines){
+      queryString.push(`enCines=${valoresFormulario.enCines}`);
+    }
+
+    this.location.replaceState('peliculas/buscar', queryString.join('&'));
   }
 
   buscarPeliculas(valores : any){
@@ -58,6 +108,8 @@ export class FiltrosPeliculasComponent implements OnInit {
     if(valores.enCines){
       this.peliculas = this.peliculas.filter(pelicula=>pelicula.enCines);
     }
+
+
   }
 
 
