@@ -29,7 +29,8 @@ import { FormularioGenerosComponent } from './generos/formulario-generos/formula
 import { FiltrosPeliculasComponent } from './peliculas/filtros-peliculas/filtros-peliculas.component';
 import { FormularioActoresComponent } from './actores/formulario-actores/formulario-actores.component';
 import { InputImgComponent } from './utilidades/input-img/input-img.component';
-import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine.component'
+import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine.component';
+import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/formulario-pelicula.component'
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine
     FiltrosPeliculasComponent,
     FormularioActoresComponent,
     InputImgComponent,
-    FormularioCineComponent
+    FormularioCineComponent,
+    FormularioPeliculaComponent
   ],
   imports: [
     BrowserModule,
