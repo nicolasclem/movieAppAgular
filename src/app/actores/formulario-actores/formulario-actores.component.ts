@@ -27,6 +27,7 @@ export class FormularioActoresComponent implements OnInit {
       validators:[Validators.required]
     },
     ],
+    descripcion:'',
     fechaNacimiento:'',
     foto:''
     })
