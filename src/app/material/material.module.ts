@@ -10,7 +10,8 @@ import {MatSelectModule}from '@angular/material/select';
 import {MatCheckboxModule}from '@angular/material/checkbox';
 import {MatDatepickerModule}from '@angular/material/datepicker';
 import {MatNativeDateModule}from '@angular/material/core';
-import{MatAutocompleteModule} from '@angular/material/autocomplete'
+import{MatAutocompleteModule} from '@angular/material/autocomplete';
+import{MatTableModule}from '@angular/material/table'
 
 
 
@@ -26,7 +27,8 @@ import{MatAutocompleteModule} from '@angular/material/autocomplete'
     MatCheckboxModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatAutocompleteModule
+    MatAutocompleteModule,
+    MatTableModule
   ],
   imports: [
     CommonModule,
