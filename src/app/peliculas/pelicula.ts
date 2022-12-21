@@ -14,4 +14,5 @@ export interface PeliculaDTO{
   fechaLanzamiento: Date;
   trailer: string;
   poster:string;
+
 }

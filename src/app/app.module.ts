@@ -11,7 +11,7 @@ import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './menu/menu.component';
 import { RatingComponent } from './utilidades/rating/rating.component';
 
-import {ReactiveFormsModule}from '@angular/forms';
+import {ReactiveFormsModule,FormsModule}from '@angular/forms';
 import { CrearGeneroComponent } from './generos/crear-genero/crear-genero.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { IndiceGenerosComponent } from './generos/indice-generos/indice-generos.component';
@@ -30,7 +30,8 @@ import { FiltrosPeliculasComponent } from './peliculas/filtros-peliculas/filtros
 import { FormularioActoresComponent } from './actores/formulario-actores/formulario-actores.component';
 import { InputImgComponent } from './utilidades/input-img/input-img.component';
 import { FormularioCineComponent } from './cines/formulario-cine/formulario-cine.component';
-import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/formulario-pelicula.component'
+import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/formulario-pelicula.component';
+import { SelectorMultipleComponent } from './utilidades/selector-multiple/selector-multiple.component'
 
 @NgModule({
   declarations: [
@@ -57,14 +58,17 @@ import { FormularioPeliculaComponent } from './peliculas/formulario-pelicula/for
     FormularioActoresComponent,
     InputImgComponent,
     FormularioCineComponent,
-    FormularioPeliculaComponent
+    FormularioPeliculaComponent,
+    SelectorMultipleComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

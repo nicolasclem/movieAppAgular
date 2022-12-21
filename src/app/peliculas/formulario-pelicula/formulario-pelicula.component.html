@@ -33,8 +33,14 @@
     <textarea formControlName="resumen" matInput></textarea>
   </mat-form-field>
 
+
+  <h4>Seleccione los generos</h4>
+
+  <app-selector-multiple
+  [seleccionados]="generosSeleccionados"
+  [noSeleccionados]="generosNoSeleccionados"></app-selector-multiple>
   <div>
     <button mat-flat-button color="primary" [disabled]="form.invalid">Guardar Cambios</button>
-    <a mat-stroked-button routerLink="/">Cancelar</a>
+    <a mat-stroked-button routerLigenerosNoSeleccionadosnk="/">Cancelar</a>
   </div>
 </form>
